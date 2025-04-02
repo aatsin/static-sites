@@ -103,7 +103,7 @@ Demanem per això que es respecti l'exclusivitat dels artistes: prohibit el colo
                 <DecorativeBorder />
                 <div className="absolute inset-0 flex flex-col justify-center items-center drop-shadow-lg text-gatsby-pearl-500 text-center p-4">
                     <DecorativeTitle
-                        title="preguntes freqüents"
+                        title="Preguntes freqüents"
                     />
                 </div>
             </motion.section>

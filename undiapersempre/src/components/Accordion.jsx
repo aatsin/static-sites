@@ -27,7 +27,7 @@ export default function Accordion({ items }) {
                     >
                         <div className="absolute inset-0 bg-gatsby-gold-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 blur-lg"></div>
                         <div className="relative z-10 flex justify-between items-center">
-                            <h3 className="text-gatsby-champagne-300 text-xl md:text-2xl font-medium tracking-wide font-gatsby">
+                            <h3 className="text-gatsby-champagne-300 text-xl font-medium tracking-wide font-serif">
                                 {item.question}
                             </h3>
                             <motion.span

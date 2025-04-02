@@ -48,11 +48,11 @@ export default function DayOfTheEvent() {
             offset: ["start end", "center center"]
         })
 
-        const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+        const scale = useTransform(scrollYProgress, [0.5, 3], [1, 4])
         const x = useTransform(
             scrollYProgress,
             [0, 1],
-            [index % 2 === 0 ? -50 : 50, 0]
+            [index % 2 === 0 ? -250 : 250, 0]
         )
 
         const CardContent = () => (
@@ -176,8 +176,8 @@ export default function DayOfTheEvent() {
                 <DecorativeBorder />
                 <div className="absolute inset-0 flex flex-col justify-center items-center drop-shadow-lg text-gatsby-pearl-500 text-center p-4">
                     <DecorativeTitle
-                        title="guió de l'obra"
-                        subtitle="ESPEREM QUE GAUDIU DE L'ESPECTACLE!"
+                        title="Guió de l'obra"
+                        subtitle="Esperem que gaudiu de l'espectacle!"
                     />
                 </div>
             </motion.section>

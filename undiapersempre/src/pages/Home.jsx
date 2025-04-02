@@ -11,7 +11,7 @@ export default function Home() {
         <div className="min-h-screen bg-gatsby-night-800">
 
             {/* Hero Section */}
-            <section className="relative w-full h-[500px]">
+            <section className="relative w-full h-[400px]">
                 <img
                     src="https://images.unsplash.com/photo-1494955870715-979ca4f13bf0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Un dia per sempre"
@@ -40,7 +40,7 @@ export default function Home() {
                     <DecorativeCorner position="bottom-left" />
                     <DecorativeCorner position="bottom-right" />
                     <div className="relative">
-                        <DecorativeTertiaryTitle title="SINOPSI" />
+                        <DecorativeTertiaryTitle title="Sinopsi" />
                     </div>
                     <div className="text-md md:text-lg ">
                         <p className="mb-6">

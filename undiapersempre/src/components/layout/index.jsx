@@ -19,7 +19,7 @@ export default function Layout({ children }) {
             <header className="flex justify-between items-center p-4">
                 <div>
                     <h1 className="text-xl font-bold cursor-pointer" onClick={handleGoHome}>
-                        <img src={logo} alt="Un dia per sempre" className="h-16" />
+                        <img src={logo} alt="Un dia per sempre" className="h-12" />
                     </h1>
                 </div>
                 {location.pathname !== "/" && (
