@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route 
           path="/" 
-          element={import.meta.env.DEV ? <Countdown /> : <Layout><Home /></Layout> } 
+          element={import.meta.env.DEV ? <Layout><Home /></Layout> : <Countdown /> } 
         />
 
         {import.meta.env.DEV && (

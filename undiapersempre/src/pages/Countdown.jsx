@@ -49,7 +49,7 @@ export default function CountdownTimer() {
       )}
       </div>
       </div>
-      <div className="mt-16">
+      <div className="mt-10">
       <DecorativeBorder />
       </div>
       <div className="text-gatsby-gold-700 text-center mt-10 mb-10">
