@@ -1,0 +1,38 @@
+name: Deploy Undiapersempre
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "undiapersempre/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies using npm
+        run: |
+          cd undiapersempre
+          npm install
+
+      - name: Build Undiapersempre
+        run: npm run build 
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./undiapersempre/dist/
+          server-dir: /public_html/undiapersempre/
