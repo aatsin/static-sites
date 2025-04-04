@@ -21,12 +21,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies using npm
-        run: |
-          cd undiapersempre
-          npm install
+        run: npm install
 
       - name: Build Undiapersempre
-        run: npm run build 
+        run: npm run build
 
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
