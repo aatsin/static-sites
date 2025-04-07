@@ -11,20 +11,15 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST" ){
 
     $conn = new mysqli("localhost", "root", "", "undiapersempre");
 
-    //funcio nomes lletres
     function validateName($param) {
         return preg_match("/^[a-zA-ZÀ-ÿ\s]+$/", $param);
     }
-    //funcio nomes numeros
     function validatePhone($param) {
         return preg_match("/^[0-9]+$/", $param);
     }
-    //funcio email
     function validateEmail($param) {
         return filter_var($param, FILTER_VALIDATE_EMAIL);
     }
-
-    //funcio child
     function validateChild($param) {
         return $param == "0" || $param == "1";
     }
