@@ -1,4 +1,11 @@
 <?php
+
+include_once("db.php");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 if ($_SERVER ["REQUEST_METHOD"] == "POST" ){
 
     $name = $_POST["name"];
@@ -9,7 +16,6 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST" ){
     $menu = $_POST["menu"];
     $song = $_POST["song"];
 
-    $conn = new mysqli("localhost", "root", "", "undiapersempre");
 
     function validateName($param) {
         return preg_match("/^[a-zA-ZÀ-ÿ\s]+$/", $param);
@@ -26,37 +32,36 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST" ){
     
 
     if (!validateName($name) || !validateName($surname)) {
-        die("El text no es vàlid. Només es permeten lletres i espais.");
+        echo json_encode(["status" => "error", "message" => "The name and surname must only contain letters and spaces."]);
+        exit;
     }
-
+    
     if (!validatePhone($phone)) {
-        die("El telèfon no és vàlid. Només es permeten números.");
+        echo json_encode(["status" => "error", "message" => "The phone number is invalid. Only numbers are allowed."]);
+        exit;
     }
 
     if (!validateEmail($email)) {
-        die("El correu electrònic no és vàlid.");
+        echo json_encode(["status" => "error", "message" => "The email address is invalid."]);
+        exit;
     }
 
     if (!validateChild($child)) {
-        die("El valor de 'child' no és vàlid. Només es permeten 0 o 1.");
-    }
-
-    if ($conn->connection_error){
-        die("Conexión fallida:" .$conn->connection_error);
+        echo json_encode(["status" => "error", "message" => "The child parameter is invalid. Only numbers 0 or 1 are allowed."]);
+        exit;
     }
 
     $stmt = $conn->prepare("INSERT INTO undiapersempre (name, surname, phone, email, child, menu, song) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssiss", $name, $surname, $phone, $email, $child, $menu, $song);
 
-    if ($stmt->execute()){
-        echo "Registro exitoso";
+    if ($stmt->execute()) {
+        echo json_encode(["status" => "success", "message" => "Record successfully inserted."]);
     } else {
-        echo "Error: " . $stmt->error;
+        echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
     }
-    
+
     $stmt->close();
     $conn->close();
-    
-
 }
+
 ?>
