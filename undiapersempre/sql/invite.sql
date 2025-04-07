@@ -1,7 +1,4 @@
-CREATE DATABASE IF NOT EXISTS undiapersempre;
-USE undiapersempre;
-
-CREATE TABLE IF NOT EXISTS invite (
+CREATE TABLE IF NOT EXISTS undiapersempre (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     surname VARCHAR(100) NOT NULL,
