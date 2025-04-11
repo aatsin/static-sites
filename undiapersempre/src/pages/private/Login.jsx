@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gatsby-night-800">
+    <div className="min-h-[73vh] flex items-center justify-center bg-gatsby-night-800">
       <div className="bg-gatsby-night-700 p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl sm:text-4xl font-serif text-gatsby-gold-600 tracking-[0.1em] mb-6 sm:mb-8 text-center">Sign In</h1>
 

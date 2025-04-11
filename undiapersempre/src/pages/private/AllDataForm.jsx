@@ -27,7 +27,7 @@ const FormResponses = () => {
   }
 
   return (
-    <div className="bg-gatsby-night-800 min-h-screen py-12 px-6">
+    <div className="bg-gatsby-night-800 min-h-[73vh] py-12 px-6">
       <div className="container mx-auto">
         <h1 className="text-3xl lg:text-4xl font-serif text-gatsby-gold-600 tracking-wide text-center mb-8">
           Resum d'Informació dels Convidats
