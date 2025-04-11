@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS undiapersempre (
     email TEXT NOT NULL,
     child TINYINT NOT NULL,
     menu TEXT NOT NULL,
-    song TEXT,
+    song TEXT
 );

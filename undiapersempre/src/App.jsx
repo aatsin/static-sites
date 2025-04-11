@@ -7,6 +7,9 @@ import FAQs from "./pages/FAQs";
 import ScrollToTop from "./components/ScrollToTop";
 import CountdownPage from "./pages/CountdownPage";
 import UpcomingProduction from "./pages/UpcomingProduction";
+import Login from "./pages/private/Login";
+import AllDataForm from "./pages/private/AllDataForm";
+import DataForms from "./pages/private/DataForms";
 
 function App() {
   return (
@@ -57,6 +60,30 @@ function App() {
               element={
                 <Layout>
                   <UpcomingProduction />
+                </Layout>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Layout>
+                  <Login />
+                </Layout>
+              }
+            />
+            <Route
+              path="/admin/:email"
+              element={
+                <Layout>
+                  <AllDataForm />
+                </Layout>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <Layout>
+                  <DataForms />
                 </Layout>
               }
             />
